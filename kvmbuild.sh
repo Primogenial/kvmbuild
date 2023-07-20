@@ -8,6 +8,7 @@ if [ "$(id -u)" != "0" ]; then
    exit 1
 fi
 echo " Starting install process now"
+echo " Please be patient as this can take a while!"
 
 sudo dnf -y update
 sudo dnf -y install epel-release
