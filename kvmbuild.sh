@@ -4,15 +4,15 @@
 
 echo " Starting install process now"
 
-dnf -y update
-dnf -y install epel-release
-dnf -y groupinstall "Virtualization Host"
-dnf -y install cockpit cockpit-machines
+sudo dnf -y update
+sudo dnf -y install epel-release
+sudo dnf -y groupinstall "Virtualization Host"
+sudo dnf -y install cockpit cockpit-machines
 
-systemctl enable --now libvirtd
-systemctl enable --now cockpit.socket
+sudo systemctl enable --now libvirtd
+sudo systemctl enable --now cockpit.socket
 
-firewall-cmd --permanent --add-port=9090/tcp && firewall-cmd --reload
+sudo firewall-cmd --permanent --add-port=9090/tcp && firewall-cmd --reload
 
 echo "Congratulations! You now have a system configured for KVM virtualization"
 echo "to access the Cockpit Web interface, go to the ip address of your LAN"
